@@ -16,10 +16,11 @@ Install with shell script:
 
 Clone the repository, and run
 ```bash
+chmod +x ./install.sh
 ./install.sh
 ```
 
-Install manually:
+On Windows, you can install manually in command prompt:
 
 Clone the repository, and run `npm install` in both backend and frontend folder.
 ```bash
@@ -32,10 +33,28 @@ npm install
 <h2 align="center">Get Started</h2>
 
 ```bash
+chmod +x ./start.sh
 ./start.sh
 ```
 
-Close the terminal can stop serving and release
+On Windows, you can start manually in command prompt
+
+```dos
+cd ./backend
+md ..\tmp
+START /B node ./node_modules/webpack/bin/webpack.js -w > ../tmp/tmp.txt
+START /B node server.js > ../tmp/tmp2.txt
+cd ../frontend
+START /B node build/dev-server.js > ../tmp/tmp3.txt
+
+```
+
+Close the terminal/command prompt can stop serving and release ports. Or, run
+
+```bash
+chmod +x ./stop.sh
+./stop.sh
+```
 
 <h2 align="center">Concepts</h2>
 
@@ -55,6 +74,16 @@ In `backend/lib/generator.class.php`, replace `http://localhost:3000/` with the 
 Make sure the external linked static assets are available on the target server. For example, the folder available at `http://localhost:3000/css/fonts` must upload to `http://example.com/css/fonts`.
 
 Then, restart the project and import/export again.
+
+
+<h2 align="center">Import</h2>
+
+The exported html contains importable scripts.
+
+To import,
+1. click on import button
+2. copy and paste previously exported html
+
 
 <h2 align="center">Contributors</h2>
 
